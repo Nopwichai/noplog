@@ -12,13 +12,13 @@ var log_data_warning string
 var log_data_error string
 
 func Log_info(service string, fn string, msg string) {
-	log_data_info = log_data_info + time.Now().Format("15:04:05.0000") + "\tI\t" + service + "-" + fn + "\t" + msg + "\n"
+	log_data_info = log_data_info + time.Now().Format("15:04:05.0000") + "\t" + service + "-" + fn + "\t" + msg + "\n"
 }
 func Log_warning(service string, fn string, msg string) {
-	log_data_warning = log_data_warning + time.Now().Format("15:04:05.0000") + "\tW\t" + service + "-" + fn + "\t" + msg + "\n"
+	log_data_warning = log_data_warning + time.Now().Format("15:04:05.0000") + "\t" + service + "-" + fn + "\t" + msg + "\n"
 }
 func Log_error(service string, fn string, msg string) {
-	log_data_error = log_data_error + time.Now().Format("15:04:05.0000") + "\tE\t" + service + "-" + fn + "\t" + msg + "\n"
+	log_data_error = log_data_error + time.Now().Format("15:04:05.0000") + "\t" + service + "-" + fn + "\t" + msg + "\n"
 }
 
 func Logs_Write(log_dir string) {
@@ -76,7 +76,6 @@ func Logs_Write(log_dir string) {
 				}
 			}
 		}
-
 		time.Sleep(time.Duration(time_delay) * 1000 * time.Millisecond)
 	}
 }
