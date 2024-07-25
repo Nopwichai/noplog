@@ -23,7 +23,7 @@ func Logs_Write(log_dir string, time_delay int) {
 
 	for {
 		if len(log_data) > 0 {
-			currentDate := time.Now().Format("2006-01-02_15")
+			currentDate := time.Now().Format("2006-01-02")
 			fname := log_dir + "Log-" + currentDate + ".log"
 			file, err := os.OpenFile(fname, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 			content := log_data
