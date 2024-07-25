@@ -21,7 +21,9 @@ func Log_error(service string, fn string, msg string) {
 	log_data_error = log_data_error + time.Now().Format("15:04:05.0000") + "\tE\t" + service + "-" + fn + "\t" + msg + "\n"
 }
 
-func Logs_Write(log_dir string, time_delay int) {
+func Logs_Write(log_dir string) {
+
+	var time_delay int = 5
 
 	for {
 		if len(log_data_info) > 0 {
