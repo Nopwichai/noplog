@@ -25,6 +25,11 @@ func Logs_Write(log_dir string) {
 
 	var time_delay int = 5
 
+	if _, err := os.Stat(log_dir); os.IsNotExist(err) {
+		Log_error("LOG", "Log DIR not found. Change DIR to ./logs/")
+		log_dir = "./logs/"
+	}
+
 	for {
 		if len(log_data_info) > 0 {
 			currentDate := time.Now().Format("20060102")
