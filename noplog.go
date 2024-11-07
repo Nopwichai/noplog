@@ -32,7 +32,7 @@ func Logs_Write(log_dir string) {
 
 	for {
 		if len(log_data_info) > 0 {
-			currentDate := time.Now().Format("20060102")
+			currentDate := time.Now().Format("20060102-15")
 			fname := log_dir + "Log-" + currentDate + "-info.log"
 			file, err := os.OpenFile(fname, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 			content := log_data_info
@@ -49,7 +49,7 @@ func Logs_Write(log_dir string) {
 		}
 
 		if len(log_data_warning) > 0 {
-			currentDate := time.Now().Format("20060102")
+			currentDate := time.Now().Format("20060102-15")
 			fname := log_dir + "Log-" + currentDate + "-warning.log"
 			file, err := os.OpenFile(fname, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 			content := log_data_warning
@@ -66,7 +66,7 @@ func Logs_Write(log_dir string) {
 		}
 
 		if len(log_data_error) > 0 {
-			currentDate := time.Now().Format("20060102")
+			currentDate := time.Now().Format("20060102-15")
 			fname := log_dir + "Log-" + currentDate + "-error.log"
 			file, err := os.OpenFile(fname, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 			content := log_data_error
